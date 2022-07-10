@@ -21,9 +21,15 @@ mf.kernel()
 cavity_freq = numpy.asarray([0.2940])
 cavity_mode = numpy.asarray([[0.001, 0.0, 0.0]])
 
-# TDA-JC
+# QED(JC)TDA
 cav_model = qed.JC(mf, cavity_mode=cavity_mode, cavity_freq=cavity_freq)
 td        = qed.TDA(mf, cav_obj=cav_model)
+td.nroots = 5
+td.kernel()
+
+# QED(PF)-TD-DFT
+cav_model = qed.PF(mf, cavity_mode=cavity_mode, cavity_freq=cavity_freq)
+td        = qed.TDDFT(mf, cav_obj=cav_model)
 td.nroots = 5
 td.kernel()
 

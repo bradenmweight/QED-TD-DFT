@@ -85,3 +85,7 @@ tmp*
 # IDEs
 .idea/
 .vscode/
+
+# Test Data
+examples/test_01
+examples/test_02
